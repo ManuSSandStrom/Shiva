@@ -432,20 +432,36 @@
                 cardName = "Shiva";
             }
 
-            const normalizedPath = `/${encodeURIComponent(cardName)}`;
-            const needsCleanUrl =
-                currentUrl.pathname !== normalizedPath ||
-                currentUrl.search.length > 0 ||
-                currentUrl.hash.length > 0;
+            window.__cardName = cardName;
 
-            if (needsCleanUrl) {
-                currentUrl.pathname = normalizedPath;
-                currentUrl.search = '';
+            const internalSearch = `?@=${encodeURIComponent(cardName)}`;
+
+            if (currentUrl.search !== internalSearch || currentUrl.hash.length > 0) {
+                currentUrl.search = internalSearch;
                 currentUrl.hash = '';
                 window.history.replaceState({}, document.title, currentUrl.toString());
             }
         })();
     </script>
     <script src="https://goodconnext.com/card/GamyaSolution/js/index_main.js"></script>
+    <script>
+        (function () {
+            const cardName = (window.__cardName || "Shiva").trim();
+
+            if (!cardName) {
+                return;
+            }
+
+            const cleanUrl = new URL(window.location.href);
+            const normalizedPath = `/${encodeURIComponent(cardName)}`;
+
+            if (cleanUrl.pathname !== normalizedPath || cleanUrl.search.length > 0 || cleanUrl.hash.length > 0) {
+                cleanUrl.pathname = normalizedPath;
+                cleanUrl.search = '';
+                cleanUrl.hash = '';
+                window.history.replaceState({}, document.title, cleanUrl.toString());
+            }
+        })();
+    </script>
 </body>
 </html>
