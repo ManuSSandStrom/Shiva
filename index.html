@@ -81,8 +81,7 @@
         }
 
         .company,
-        .services,
-        .download-text {
+        .services {
             color: var(--brand-muted);
         }
 
@@ -99,37 +98,6 @@
         .download-leftSection,
         .bottom-nav-section {
             flex-wrap: wrap;
-        }
-
-        .apk-download-button {
-            min-height: 44px;
-            padding: 12px 20px;
-            border-radius: 999px;
-            background: linear-gradient(135deg, var(--brand-primary), var(--brand-bg));
-            color: var(--brand-surface) !important;
-            font-family: "Roboto", sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            letter-spacing: 0.2px;
-            box-shadow: 0 10px 24px rgba(22, 63, 168, 0.25);
-            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-        }
-
-        .apk-download-button:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 12px 28px rgba(15, 47, 125, 0.3);
-            background: linear-gradient(135deg, var(--brand-primary-dark), var(--brand-primary));
-        }
-
-        .apk-download-button.mobile {
-            width: min(220px, 100%);
-        }
-
-        @media screen and (max-width: 550px) {
-            #mobileNavContainer {
-                flex-direction: column;
-                gap: 12px;
-            }
         }
     </style>
 
@@ -234,14 +202,6 @@
                                             <a  id="vcarddownloadBtn" title="Download VCard" target="_blank"><img src="https://goodconnext.com/card/GamyaSolution/Assets/SavetoContacts.svg" alt="VCard_icon"></a>
                                             <!-- <a id="downloadBtn" title="Download PDF" target="_blank"><img src="https://goodconnext.com/card/GamyaSolution/Assets/PDF_Icon.svg" alt="Download_icon"></a> -->  
                                         </div>
-                                        <a
-                                            id="apkDownloadBtn"
-                                            class="apk-download-button"
-                                            href="#"
-                                            title="Download APK"
-                                            target="_blank"
-                                            rel="noopener"
-                                        >Download APK</a>
                                     </div>
                                     <div class="exp-section">
                                         <a id="pdf-download" target="_blank">
@@ -371,14 +331,6 @@
                                     <a title="Exchange Contacts" target="_blank" id="openbtnMobile"><img src="https://goodconnext.com/card/GamyaSolution/Assets/ExchangeContact.svg"></a>
                                     <a id="vcarddownloadBtnMobile" title="Download VCard" target="_blank"><img src="https://goodconnext.com/card/GamyaSolution/Assets/SavetoContacts.svg" alt="VCard_icon"></a>
                                 </div>
-                                <a
-                                    id="apkDownloadBtnMobile"
-                                    class="apk-download-button mobile"
-                                    href="#"
-                                    title="Download APK"
-                                    target="_blank"
-                                    rel="noopener"
-                                >Download APK</a>
                             </div>
 
                             </div>
@@ -486,7 +438,7 @@
             cardName = decodeUrlValue(cardName).trim();
 
             if (!cardName) {
-                return;
+                cardName = "Shiva";
             }
 
             currentUrl.search = `?@=${encodeURIComponent(cardName)}`;
@@ -495,30 +447,5 @@
         })();
     </script>
     <script src="https://goodconnext.com/card/GamyaSolution/js/index_main.js"></script>
-    <script>
-        const APK_DOWNLOAD_URL = "https://goodconnext.com/card/GamyaSolution/Assets/Profile/GamyaSolution.apk";
-        const APK_FILE_NAME = "GamyaSolution.apk";
-
-        function wireApkDownloadButton(buttonId) {
-            const button = document.getElementById(buttonId);
-
-            if (!button) {
-                return;
-            }
-
-            button.href = APK_DOWNLOAD_URL;
-            button.setAttribute("download", APK_FILE_NAME);
-
-            button.addEventListener("click", function (event) {
-                if (!APK_DOWNLOAD_URL || APK_DOWNLOAD_URL === "#") {
-                    event.preventDefault();
-                    window.alert("Add your direct APK URL to enable this button.");
-                }
-            });
-        }
-
-        wireApkDownloadButton("apkDownloadBtn");
-        wireApkDownloadButton("apkDownloadBtnMobile");
-    </script>
 </body>
 </html>
