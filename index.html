@@ -432,9 +432,18 @@
                 cardName = "Shiva";
             }
 
-            currentUrl.search = `?@=${encodeURIComponent(cardName)}`;
-            currentUrl.hash = '';
-            window.history.replaceState({}, document.title, currentUrl.toString());
+            const normalizedPath = `/${encodeURIComponent(cardName)}`;
+            const needsCleanUrl =
+                currentUrl.pathname !== normalizedPath ||
+                currentUrl.search.length > 0 ||
+                currentUrl.hash.length > 0;
+
+            if (needsCleanUrl) {
+                currentUrl.pathname = normalizedPath;
+                currentUrl.search = '';
+                currentUrl.hash = '';
+                window.history.replaceState({}, document.title, currentUrl.toString());
+            }
         })();
     </script>
     <script src="https://goodconnext.com/card/GamyaSolution/js/index_main.js"></script>
