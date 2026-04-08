@@ -453,10 +453,13 @@
             }
 
             const cleanUrl = new URL(window.location.href);
-            const normalizedPath = `/${encodeURIComponent(cardName)}`;
+            const isFileUrl = cleanUrl.protocol === "file:";
+            const targetPath = isFileUrl
+                ? cleanUrl.pathname
+                : `/${encodeURIComponent(cardName)}`;
 
-            if (cleanUrl.pathname !== normalizedPath || cleanUrl.search.length > 0 || cleanUrl.hash.length > 0) {
-                cleanUrl.pathname = normalizedPath;
+            if (cleanUrl.pathname !== targetPath || cleanUrl.search.length > 0 || cleanUrl.hash.length > 0) {
+                cleanUrl.pathname = targetPath;
                 cleanUrl.search = '';
                 cleanUrl.hash = '';
                 window.history.replaceState({}, document.title, cleanUrl.toString());
