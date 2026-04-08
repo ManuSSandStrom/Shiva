@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Gamya Solution, your trusted Partner for all Essential Documentation needs">
+    <meta property="og:title" content="Gamya Solution - Your One-Stop Document Service in Bangalore">
+    <meta property="og:description" content="Gamya Solution, your trusted Partner for all Essential Documentation needs">
+    <meta property="og:image" content="https://goodconnext.com/card/GamyaSolution/Assets/Profile/ProfileThumbnail.png">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.gamyasolution.com">
+
+    <meta name="author" content="Gamya Solution">
+
+    <meta name="msapplication-TileImage" content="https://goodconnext.com/card/GamyaSolution/Assets/Profile/ProfileThumbnail.png">
+    <title>Gamya Solution - Your One-Stop Document Service in Bangalore</title>
+    <link  rel="icon" type="image/svg+xml" href="https://goodconnext.com/card/GamyaSolution/Assets/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://goodconnext.com/card/GamyaSolution/Assets/Profile/ProfileThumbnail.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://goodconnext.com/card/GamyaSolution/css/style.css">
+    <!-- <link rel="stylesheet" href="https://goodconnext.com/card/GamyaSolution/css/style.css"> -->
+     
+    <!-- slick slider css -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+
+    <!-- shareon  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shareon@2/dist/shareon.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/shareon@2/dist/shareon.iife.js" defer init></script>
+    <style>
+        :root {
+            --brand-bg: #2563eb;
+            --brand-primary: #163fa8;
+            --brand-primary-dark: #0f2f7d;
+            --brand-heading: #142b6f;
+            --brand-accent: #ff8a1f;
+            --brand-text: #1b3764;
+            --brand-muted: #4b5f84;
+            --brand-surface: #ffffff;
+        }
+
+        .cardbgcolorblock {
+            background-color: var(--brand-bg);
+        }
+
+        .name,
+        .company-name {
+            color: var(--brand-heading);
+        }
+
+        .title,
+        .card_companywebsite a,
+        .share-text {
+            color: var(--brand-primary);
+        }
+
+        .education,
+        .location {
+            color: var(--brand-accent);
+        }
+
+        .description,
+        .contact-section .left a,
+        .company-description,
+        .company-address,
+        .company-contact a,
+        .company-email,
+        #website {
+            color: var(--brand-text);
+        }
+
+        .company,
+        .services,
+        .download-text {
+            color: var(--brand-muted);
+        }
+
+        button,
+        .card-section.preview .card-header {
+            background-color: var(--brand-primary);
+        }
+
+        .social-media-section {
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .download-leftSection,
+        .bottom-nav-section {
+            flex-wrap: wrap;
+        }
+
+        .apk-download-button {
+            min-height: 44px;
+            padding: 12px 20px;
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--brand-primary), var(--brand-bg));
+            color: var(--brand-surface) !important;
+            font-family: "Roboto", sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            box-shadow: 0 10px 24px rgba(22, 63, 168, 0.25);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+        }
+
+        .apk-download-button:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 12px 28px rgba(15, 47, 125, 0.3);
+            background: linear-gradient(135deg, var(--brand-primary-dark), var(--brand-primary));
+        }
+
+        .apk-download-button.mobile {
+            width: min(220px, 100%);
+        }
+
+        @media screen and (max-width: 550px) {
+            #mobileNavContainer {
+                flex-direction: column;
+                gap: 12px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <div class="content" id="content" >
+        <div class="cardbgcolorblock card1-bg" id="bgBlock">
+            <!-- <img src="https://goodconnext.com/card/GamyaSolution/Assets/BannerBg.png" alt="BannerBg-img" srcset=""> -->
+        </div>
+        <div class="card-section">
+            
+            <div class="container" id="container">	
+                <form action="">
+                    <div>
+                        <p>Exchange your contact with me </p>
+                        <span>
+                            <!-- <label for="name">Name :</label><br/> -->
+                            <input id="form-name" type="text" placeholder="Name" required="">
+                            <div class="err" id="nameerr"></div>
+                        </span>
+                        <span>
+                            <!-- <label for="Subject">Subject :</label></br> -->
+                            <input id="form-mobile" type="tel" placeholder="Mobile" required="">
+                            <div class="err" id="mobileerr"></div>
+                        </span>
+                        <span>
+                            <!-- <label for="email">Email :</label></br> -->
+                            <input id="form-email" type="email" placeholder="Email" required="">
+                            <div class="err" id="emailerr"></div>
+                        </span>
+                        <span>
+                            <!-- <label for="email">Email :</label></br> -->
+                            <input id="form-companyname" type="text" placeholder="Company Name">
+                            <div class="err" id="companyerr"></div>
+                        </span>
+                        <span>
+                            <!-- <label for="email">Email :</label></br> -->
+                            <input id="form-digitalcard" type="text" placeholder="Digital card">
+                            <div class="err" id="carderr"></div>
+                        </span>
+
+                    </div>
+                    <!-- <label for="message">Your Message :</label><br/> -->
+                    <div class="formbtn">
+                        <button type="button" onclick="sendToWhatsapp()">Submit</button>
+                        <button id="formclosebtn">Cancel</button>
+                    </div>  
+                </form>
+            </div>
+            <div class="card-parent tab-content active" id="card1">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="card-header" id="card-banner">
+                            <div class="card-banner">
+                                <img src="https://goodconnext.com/card/GamyaSolution/Assets/Banner.svg" alt="Banner">
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="loading-container">
+                                <div class="after-content" id="after-content">
+                                    
+
+                                    <div class="name-container">
+                                        
+                                        <div  class="profile-imagemaincontainer">
+                                            <div class="profile-image-container">
+                                                <div class="profile-image">
+                                                    <img id="profile-image" src="https://goodconnext.com/card/GamyaSolution/Assets/Profile/Profile.png" onerror='this.src="https://goodconnext.com/card/GamyaSolution/Assets/Profile/Profile.png"' alt="profile-image"></img>
+                                                </div>
+                                            </div>                
+                                        </div>
+                                        <div class="name-section">
+                                            <h2 class="name" id="name" title="name">Name</h2>
+                                            <!-- <h3 class="education" id="education"></h3> -->
+                                            <p class="title" id="role" title="role"> Role</p>            
+                                        </div>
+                                    </div>
+                                    <div class="contact-section">
+                                        <div class="left">
+                                            <div class="phone-container">
+                                                <span class="icon"><img src="https://goodconnext.com/card/GamyaSolution/Assets/phone_icon.svg" alt="phone_icon" srcset=""></span>
+                                                <div class="phone-numbers">
+                                                    <a href="#" title="Call Phone Number" style="font-weight: bold;" id="mobile">+91 123 456 7890</a>
+                                                </div>
+                                            </div>
+                                            <a href="mailto:email@mail.in" title="Send an Email"><span class="icon"><img src="https://goodconnext.com/card/GamyaSolution/Assets/email_icon.svg" alt="email_icon" srcset=""></span><span id="email">email@mail.in</span></a>
+                                            <!-- <a href="mailto:email@mail.in" title="Send an Email"><span class="icon"><img src="https://goodconnext.com/card/GamyaSolution/Assets/email_icon.svg" alt="email_icon" srcset=""></span><span id="secondaryemail">email@mail.in</span></a> -->
+                                        </div>
+                                        <div class="right">
+                                            <div class="social-media-links-left">
+                                                <a id="linkedin" href="https://www.instagram.com/gamya_solution/" title="Linkedin" target="_blank"><img src="https://goodconnext.com/card/GamyaSolution/Assets/Instagram_icon.svg" alt="Instagram"></a>
+                                                <a id="whatsapp" href="https://wa.me/" title="Whatsapp" target="_blank"><img src="https://goodconnext.com/card/GamyaSolution/Assets/whatsapp_icon.svg" alt="whatsapp_icon"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="social-media-section" id="social-media-section">
+                                        
+                                        <div class="download-leftSection"> 
+                                            <a id="qrpreviewbtn" title="Download QRcode Image" target="_blank"><img src="https://goodconnext.com/card/GamyaSolution/Assets/Share_icon.svg" alt="Download_icon"></a>
+                                            <a title="Exchange Contacts" target="_blank" id="openbtn"><img src="https://goodconnext.com/card/GamyaSolution/Assets/ExchangeContact.svg"></a>
+                                            <a  id="vcarddownloadBtn" title="Download VCard" target="_blank"><img src="https://goodconnext.com/card/GamyaSolution/Assets/SavetoContacts.svg" alt="VCard_icon"></a>
+                                            <!-- <a id="downloadBtn" title="Download PDF" target="_blank"><img src="https://goodconnext.com/card/GamyaSolution/Assets/PDF_Icon.svg" alt="Download_icon"></a> -->  
+                                        </div>
+                                        <a
+                                            id="apkDownloadBtn"
+                                            class="apk-download-button"
+                                            href="#"
+                                            title="Download APK"
+                                            target="_blank"
+                                            rel="noopener"
+                                        >Download APK</a>
+                                    </div>
+                                    <div class="exp-section">
+                                        <a id="pdf-download" target="_blank">
+                                            <img src="https://goodconnext.com/card/GamyaSolution/Assets/YearsofExperience.svg" alt="Exp Image" srcset="">
+                                        </a>
+                                    </div>
+                                    <div class="services-section">
+                                        <div class="service-slider">
+                                            <img src="https://goodconnext.com/card/GamyaSolution/Assets/Services/Service1.avif" alt="Service Image">
+                                            <img src="https://goodconnext.com/card/GamyaSolution/Assets/Services/Service2.avif" alt="Service Image">
+                                            <img src="https://goodconnext.com/card/GamyaSolution/Assets/Services/Service3.avif" alt="Service Image">
+                                            <img src="https://goodconnext.com/card/GamyaSolution/Assets/Services/Service4.avif" alt="Service Image">
+                                            <img src="https://goodconnext.com/card/GamyaSolution/Assets/Services/Service5.avif" alt="Service Image">
+                                            <img src="https://goodconnext.com/card/GamyaSolution/Assets/Services/Service6.avif" alt="Service Image">
+                                            <img src="https://goodconnext.com/card/GamyaSolution/Assets/Services/Service7.avif" alt="Service Image">
+                                            <img src="https://goodconnext.com/card/GamyaSolution/Assets/Services/Service8.avif" alt="Service Image">
+                                        </div>
+                                        <img src="https://goodconnext.com/card/GamyaSolution/Assets/MessageBox.svg" alt="Message Image" srcset="">
+                                    </div>     
+                                        <div class="customer-section">
+                                            <div>
+                                                <img src="https://goodconnext.com/card/GamyaSolution/Assets/Customers/1.svg" alt="Customer Image">
+                                            </div>
+                                            <div>
+                                                <img src="https://goodconnext.com/card/GamyaSolution/Assets/Customers/2.svg" alt="Customer Image">
+                                            </div>
+                                            <div>
+                                                <img src="https://goodconnext.com/card/GamyaSolution/Assets/Customers/3.svg" alt="Customer Image">
+                                            </div>
+                                            <div>
+                                                <img src="https://goodconnext.com/card/GamyaSolution/Assets/Customers/4.svg" alt="Customer Image">
+                                            </div>
+                                            <div>
+                                                <img src="https://goodconnext.com/card/GamyaSolution/Assets/Customers/5.svg" alt="Customer Image">
+                                            </div>
+                                            <div>
+                                                <img src="https://goodconnext.com/card/GamyaSolution/Assets/Customers/6.svg" alt="Customer Image">
+                                            </div>
+                                            <div>
+                                                <img src="https://goodconnext.com/card/GamyaSolution/Assets/Customers/7.svg" alt="Customer Image">
+                                            </div>
+                                            <div>
+                                                <img src="https://goodconnext.com/card/GamyaSolution/Assets/Customers/8.svg" alt="Customer Image">
+                                            </div>
+                                            <div>
+                                                <img src="https://goodconnext.com/card/GamyaSolution/Assets/Customers/9.svg" alt="Customer Image">
+                                            </div>
+                                            <div>
+                                                <img src="https://goodconnext.com/card/GamyaSolution/Assets/Customers/10.svg" alt="Customer Image">
+                                            </div>
+                                        </div>
+                                    <div class="company-section">
+                                        <div class="company-name-container">
+                                            <h2 class="company-name" id="company-name" title="Company Name">Gamya Solution</h2>
+                                            <!-- <h2 class="company-description" id="company-description" title="Company Description">
+                                                DataLyzer is your partner in<br> <b>Continuous Improvement</b>, Providing <b>Training</b>,<br><b> Software</b> and <b>Implementation</b> support in <b><br>SPC, MSA, FMEA, OEE </b>& <b>APQP</b> /<b> CAPA</b>
+                                            </h2> -->
+                                        </div>
+                                        <div class="company-address-container">
+                                            <div class="left">
+                                                <p class="company-address" id="company-address">
+                                                    163/D/32, 1st Floor, Kanakapura Road, Near Vybhav Hotel, Basavanagudi, Bangalore - 560 004. Karnataka
+                                                </p>
+                                            </div>
+                                            <div class="right">
+                                                <a href="https://maps.app.goo.gl/tVyLofC1V7z1KD4HA" title="Company Gmap Link" target="_blank"><img src="https://goodconnext.com/card/GamyaSolution/Assets/googlemap_icon.svg" alt="gmap_icon"></a>
+                                            </div>
+                                        </div>
+                                        <!-- 
+                                        <div class="company-address-container">
+                                            <div class="left">
+                                                <h3 class="location">
+                                                    Mumbai, INDIA
+                                                </h3>
+                                                <p class="company-address" id="company-address">
+                                                    B205, Raylon Arcade, 2nd Floor, Ramkrishna Mandir Road, Kondivita, Andheri East, Mumbai - 400 059, INDIA
+                                                </p>
+                                            </div>
+                                            <div class="right">
+                                                <a href="https://maps.app.goo.gl/dLic3JV6uFtJY4fbA" title="Company Gmap Link" target="_blank"><img src="https://goodconnext.com/card/GamyaSolution/Assets/googlemap_icon.svg" alt="gmap_icon"></a>
+                                            </div>
+                                        </div>
+                                        -->
+
+                                        <div class="company-contact">
+                                            <a href="tel:+919035152233" class="company-mobile">+91 <b>903 515 2233</b> </a>
+                                        </div>
+                                        <a href="mailto:gamyasolution@gmail.com" class="company-email"><b>gamyasolution</b>@<b>gmail</b>.com</a>
+                                    </div>
+                                    <!-- <div class="brochure-section">
+                                        <a href="https://goodconnext.com/card/GamyaSolution/Assets/Profile/CitrusBrochure.pdf" target="_blank">
+                                            <img src="https://goodconnext.com/card/GamyaSolution/Assets/DownloadBrochure_Citrus.svg" alt="Download Brochure Image" srcset="">
+                                        </a>
+                                    </div> -->
+                                    <div class="review-section">
+                                        <a href="https://share.google/e1m5615TuSGfIIeeW" target="_blank">
+                                            <img src="https://goodconnext.com/card/GamyaSolution/Assets/Google_Review.svg" alt="Google Review Image" srcset="">
+                                        </a>
+                                        <a href="https://www.justdial.com/Bangalore/Gamya-Solution-Near-Vybhav-Hotel-Yediyur-Lake-Road-Basavanagudi/080PXX80-XX80-210614124532-Q8M2_BZDET" target="_blank">
+                                            <img src="https://goodconnext.com/card/GamyaSolution/Assets/JustDial_Review.svg" alt="Justdial Review Image" srcset="">
+                                        </a>
+                                    </div>
+                                    <div class="website-section">
+                                        <div class="card_companywebsite">
+                                            <a href="https://www.gamyasolution.com" title="Visit Website" target="_blank"><span id="website">www.<b>gamyasolution</b>.com</span></a>
+                                        </div>
+                                    </div>
+
+                                    <div class="company-social-media-section">
+                                        <div class="social-media-links-left">
+                                            <a href="https://youtube.com/@gamyasolution3470?si=mKFjJh-0_BYa8okm" title="Youtube" target="_blank"><img src="https://goodconnext.com/card/GamyaSolution/Assets/youtube_icon.svg" alt="youtube_icon"></a>
+                                            <a href="https://www.facebook.com/share/1C2juHdNoC/" title="Facebook" target="_blank"><img src="https://goodconnext.com/card/GamyaSolution/Assets/facebook_icon.svg" alt="facebook_icon"></a>
+                                            <!-- <a href="https://www.linkedin.com" title="Linkedin" target="_blank"><img src="https://goodconnext.com/card/GamyaSolution/Assets/linkedin_icon.svg" alt="linkedin_icon"></a> -->
+                                            <a href="https://www.instagram.com/gamya_solution/" title="Instagram" target="_blank"><img src="https://goodconnext.com/card/GamyaSolution/Assets/Instagram_icon.svg" alt="instagram_icon"></a>
+                                            <!-- <a href="https://x.com/MultimetaSeo" title="X" target="_blank"><img src="https://goodconnext.com/card/GamyaSolution/Assets/xcom_icon.svg" alt="X_icon"></a> -->
+                                        </div>
+                                    </div>
+                                    <div class="footer-section">
+                                        <a href="https://goodux.in" class="footer-link" title="Visit GoodUX"><img src="https://goodconnext.com/card/GamyaSolution/Assets/Poweredby.svg" alt="Poweredby_logo" srcset=""></a>
+                                    </div>
+                            </div>
+
+                            
+                            <div class=" download-section AddtoContactsmobile" id="mobileNavContainer">
+                                <div class="bottom-nav-section active" id="mobilenav1">
+                                    <a id="qrpreviewbtnmobile" title="Download QRcode Image" target="_blank"><img src="https://goodconnext.com/card/GamyaSolution/Assets/Share_icon.svg" alt="Download_icon"></a>
+                                    <a title="Exchange Contacts" target="_blank" id="openbtnMobile"><img src="https://goodconnext.com/card/GamyaSolution/Assets/ExchangeContact.svg"></a>
+                                    <a id="vcarddownloadBtnMobile" title="Download VCard" target="_blank"><img src="https://goodconnext.com/card/GamyaSolution/Assets/SavetoContacts.svg" alt="VCard_icon"></a>
+                                </div>
+                                <a
+                                    id="apkDownloadBtnMobile"
+                                    class="apk-download-button mobile"
+                                    href="#"
+                                    title="Download APK"
+                                    target="_blank"
+                                    rel="noopener"
+                                >Download APK</a>
+                            </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div class="card-section preview"  id="CardPreview">
+        <div class="card">
+            <div class="ClosebtnBlock" id="Closebtn">
+                <div class="Closebtn">
+                    <img src="https://goodconnext.com/card/GamyaSolution/Assets/Close_btn.svg" alt="Close_btn">
+                </div>
+            </div>
+            <div class="card-content"  id="download-area">
+                <div class="card-header" id="card-banner">
+                    <div class="card-banner">
+                        <img src="https://goodconnext.com/card/GamyaSolution/Assets/QRCode_Banner.svg" alt="Banner">
+                    </div>
+                    <div  class="profile-imagemaincontainer">
+                        <div class="profile-image-container">
+                            <div class="profile-image">
+                                <img id="profile-image-preview" src="https://goodconnext.com/card/GamyaSolution/Assets/Profile/Profile.png" onerror='this.src="https://goodconnext.com/card/GamyaSolution/Assets/Profile/Profile.png"' alt="profile-image"></img>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="loading-container">
+                        <div class="after-content" id="after-content-preview">
+                            <div class="name-container">
+                                <h2 class="name" id="namePreview">FullName</h2>
+                                <p class="title" id="rolePreview"> Role</p>
+                            </div>
+                            <div class="qrcode" id="qrcodePreview">
+                            </div>
+                            <div class="copyurl-section" id="copyurl-section">
+                                <a class="copyLink" href="#" id="copyLink" title="Click Here to CopyURL">
+                                    <img src="https://goodconnext.com/card/GamyaSolution/Assets/CopyURL.svg" alt="" srcset="">
+                                </a>
+                                <a id="imgdownloadBtn" title="Click To Download" target="_blank"><img src="https://goodconnext.com/card/GamyaSolution/Assets/Download.svg" alt="Download"></a>
+                            </div>
+                        </div>
+                    <div class="footer-section" id="footer-section-preview">
+                        <div class="share-section">
+                            <h4 class="share-text">Share</h4>
+                            <div class="shareon"
+                                data-title="Check out this card!">
+                                <a class="whatsapp"></a>
+                                <a class="linkedin"></a>
+                                <a class="twitter"></a>
+                                <a class="facebook"></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-section" id="footer-link">
+                        <a href="https://goodux.in" class="footer-link"  title="Visit GoodUX Website" target="_blank"><img src="https://goodconnext.com/card/GamyaSolution/Assets/Poweredby.svg" alt="Poweredby_logo" srcset=""></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script>
+        (function normalizeCardUrl() {
+            const currentUrl = new URL(window.location.href);
+            const decodeUrlValue = (value) => {
+                try {
+                    return decodeURIComponent(value.replace(/\+/g, ' '));
+                } catch (error) {
+                    return value;
+                }
+            };
+
+            if (currentUrl.searchParams.has('@')) {
+                return;
+            }
+
+            let cardName = currentUrl.searchParams.get('name') || '';
+            const rawQuery = currentUrl.search.startsWith('?')
+                ? currentUrl.search.slice(1).trim()
+                : '';
+
+            if (!cardName && rawQuery && !rawQuery.includes('=')) {
+                cardName = rawQuery;
+            }
+
+            if (!cardName && currentUrl.hash.length > 1) {
+                cardName = currentUrl.hash.slice(1);
+            }
+
+            if (!cardName) {
+                const pathSegments = currentUrl.pathname.split('/').filter(Boolean);
+                const lastSegment = pathSegments[pathSegments.length - 1] || '';
+
+                if (lastSegment && !/\.[a-z0-9]+$/i.test(lastSegment)) {
+                    cardName = lastSegment;
+                }
+            }
+
+            cardName = decodeUrlValue(cardName).trim();
+
+            if (!cardName) {
+                return;
+            }
+
+            currentUrl.search = `?@=${encodeURIComponent(cardName)}`;
+            currentUrl.hash = '';
+            window.history.replaceState({}, document.title, currentUrl.toString());
+        })();
+    </script>
+    <script src="https://goodconnext.com/card/GamyaSolution/js/index_main.js"></script>
+    <script>
+        const APK_DOWNLOAD_URL = "https://goodconnext.com/card/GamyaSolution/Assets/Profile/GamyaSolution.apk";
+        const APK_FILE_NAME = "GamyaSolution.apk";
+
+        function wireApkDownloadButton(buttonId) {
+            const button = document.getElementById(buttonId);
+
+            if (!button) {
+                return;
+            }
+
+            button.href = APK_DOWNLOAD_URL;
+            button.setAttribute("download", APK_FILE_NAME);
+
+            button.addEventListener("click", function (event) {
+                if (!APK_DOWNLOAD_URL || APK_DOWNLOAD_URL === "#") {
+                    event.preventDefault();
+                    window.alert("Add your direct APK URL to enable this button.");
+                }
+            });
+        }
+
+        wireApkDownloadButton("apkDownloadBtn");
+        wireApkDownloadButton("apkDownloadBtnMobile");
+    </script>
+</body>
+</html>
