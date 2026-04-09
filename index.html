@@ -399,17 +399,17 @@
                     return value;
                 }
             };
+            let cardName = currentUrl.searchParams.get('@') || '';
 
-            if (currentUrl.searchParams.has('@')) {
-                return;
+            if (!cardName) {
+                cardName = currentUrl.searchParams.get('name') || '';
             }
 
-            let cardName = currentUrl.searchParams.get('name') || '';
             const rawQuery = currentUrl.search.startsWith('?')
                 ? currentUrl.search.slice(1).trim()
                 : '';
 
-            if (!cardName && rawQuery && !rawQuery.includes('=')) {
+            if (!cardName && rawQuery && !rawQuery.includes('=') && !rawQuery.startsWith('@=')) {
                 cardName = rawQuery;
             }
 
@@ -429,7 +429,7 @@
             cardName = decodeUrlValue(cardName).trim();
 
             if (!cardName) {
-                cardName = "Shiva";
+                return;
             }
 
             window.__cardName = cardName;
@@ -446,7 +446,7 @@
     <script src="https://goodconnext.com/card/GamyaSolution/js/index_main.js"></script>
     <script>
         (function () {
-            const cardName = (window.__cardName || "Shiva").trim();
+            const cardName = (window.__cardName || "").trim();
 
             if (!cardName) {
                 return;
